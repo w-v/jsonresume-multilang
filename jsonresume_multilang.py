@@ -185,7 +185,7 @@ def unmerge(dir_: str, schema):
     write_resumes(dir_, files)
 
 
-if __name__ == "__main__":
+def main():
     args = parse_args()
     log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(level=log_level)
@@ -193,3 +193,7 @@ if __name__ == "__main__":
     logging.debug("Parsed arguments : %s" % str(args))
     schema = load_schema(args.schema)
     globals()[args.action](args.dir, schema)
+
+
+if __name__ == "__main__":
+    main()
