@@ -2,17 +2,7 @@
 
 This is a hacky way to maintain multiple [jsonresume](https://jsonresume.org/) in different languages without duplicating too much information    
 
-## Installation
-
-Download or clone the repo, and in it run
-
-```
-pip install .
-```
-
-This will install the `jsonresume-multilang` script
-
-## Usage
+## Idea
 
 The idea is to have a single json resume file where entries for each languages are specified in a dictionary with `@lang`, all entries that do not require translation remain unchanged:
 
@@ -77,6 +67,40 @@ Single language files can also be merged back to the multilingual `resume.json`:
 
 ```
 jsonresume-multilang merge
+```
+
+## Installation
+
+Download or clone the repo, and in it run
+
+```
+pip install .
+```
+
+This will install the `jsonresume-multilang` script
+
+
+## Usage
+
+```
+usage: jsonresume_multilang.py [-h] [-v] [-d DIR] [-s SCHEMA_FILE] {merge,unmerge,sort_skills}
+
+Merge or unmerge json resume files in multiple languages into one
+
+positional arguments:
+  {merge,unmerge,sort_skills}
+                        merge: merge multiple valid single language json resumes into one
+
+                        unmerge: inverse operation
+
+                        sort_skills: sort skills of single language json resumes in alphabetical order
+
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         increase logging verbosity
+  -d DIR, --dir DIR     input and output directory for json resume files, defaults to current directory
+  -s SCHEMA_FILE, --schema SCHEMA_FILE
+                        json resume schema used for validation, defaults to v1.0.0
 ```
 
 ## Issues
