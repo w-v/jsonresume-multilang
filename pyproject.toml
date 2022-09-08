@@ -6,6 +6,7 @@ authors = ["wtv <wtv@protonmail.ch>"]
 license = "WTFPL"
 readme = "README.md"
 packages = [{include = "jsonresume_multilang.py"}]
+include = ["schema.json"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
