@@ -63,11 +63,15 @@ jsonresume-multilang unmerge
 }
 ```
 
-Single language files can also be merged back to the multilingual `resume.json`:
+Single language files can also be **merged** back to the multilingual `resume.json`:
 
 ```
 jsonresume-multilang merge
 ```
+
+**Warning**
+
+The `meta.lang` section (see above examples) **is required** in order to identify language versions
 
 ## Installation
 
