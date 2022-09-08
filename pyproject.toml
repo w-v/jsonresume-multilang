@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jsonresume-multilang"
+version = "0.1.0"
+description = "merge and unmerge json resume files in multiple languages"
+authors = ["wtv <wtv@protonmail.ch>"]
+license = "WTFPL"
+readme = "README.md"
+packages = [{include = "jsonresume_multilang"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+jsonschema = "^4.15.0"
+
+[tool.poetry.scripts]
+jsonresume-multilang = 'jsonresume_multilang'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
