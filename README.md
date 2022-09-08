@@ -54,7 +54,7 @@ jsonresume-multilang unmerge
     "basics": {
         "email": "john@doe.com",
         "image": "",
-        "label": "Développeur Python"
+        "label": "Python Developer"
     },
     "meta": {
         "lang": "en",
