@@ -5,14 +5,14 @@ description = "merge and unmerge json resume files in multiple languages"
 authors = ["wtv <wtv@protonmail.ch>"]
 license = "WTFPL"
 readme = "README.md"
-packages = [{include = "jsonresume_multilang"}]
+packages = [{include = "jsonresume_multilang.py"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 jsonschema = "^4.15.0"
 
 [tool.poetry.scripts]
-jsonresume-multilang = 'jsonresume_multilang'
+jsonresume-multilang = 'jsonresume_multilang:main'
 
 
 [build-system]
