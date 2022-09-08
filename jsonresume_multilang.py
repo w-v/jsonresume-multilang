@@ -11,15 +11,37 @@ import jsonschema
 
 
 def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["merge", "unmerge", "sort_skills"])
-    parser.add_argument("-v", "--verbose", action="store_true", default=False)
-    parser.add_argument("-d", "--dir", metavar="DIR", default=os.getcwd())
+    parser = argparse.ArgumentParser(
+        description="Merge or unmerge json resume files in multiple languages into one ",
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+    parser.add_argument(
+        "action",
+        choices=["merge", "unmerge", "sort_skills"],
+        help="""merge: merge multiple valid single language json resumes into one\n
+unmerge: inverse operation\n
+sort_skills: sort skills of single language json resumes in alphabetical order""",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        default=False,
+        help="increase logging verbosity",
+    )
+    parser.add_argument(
+        "-d",
+        "--dir",
+        metavar="DIR",
+        default=os.getcwd(),
+        help="input and output directory for json resume files, defaults to current directory",
+    )
     parser.add_argument(
         "-s",
         "--schema",
         metavar="SCHEMA_FILE",
         default=os.path.dirname(__file__) + "/schema.json",
+        help="json resume schema used for validation, defaults to v1.0.0",
     )
     return parser.parse_args()
 
